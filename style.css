@@ -1,0 +1,427 @@
+.main-content__title {
+  font-family: Roboto;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  background: url(img/fon.jpg);
+  background-size: cover;
+}
+
+.position {
+  width: 92%;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 65px 0;
+  margin-bottom: 86px;
+}
+
+.logo {
+  width: 104px;
+  height: 39px;
+  background: top left no-repeat url(img/logo.svg);
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+#hamburger-menu__toggle {
+  opacity: 0;
+}
+
+.hamburger-menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  margin-top: -20px;
+  position: fixed;
+  right: 10%;
+  width: 25px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hamburger-menu__btn > span,
+.hamburger-menu__btn > span::before,
+.hamburger-menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #fcf5ed;
+  transition-duration: 0.25s;
+}
+
+.hamburger-menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+
+.hamburger-menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.hamburger-menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 175px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 1px 6px rgba(0.2);
+  transition-duration: 0.25s;
+}
+
+.hamburger-menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font: normal 30px/35px Roboto, sans-serif;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+
+.hamburger-menu__item:hover {
+  background-color: #cfd8dc;
+}
+
+#hamburger-menu__toggle:checked ~ .hamburger-menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#hamburger-menu__toggle:checked ~ .hamburger-menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#hamburger-menu__toggle:checked ~ .hamburger-menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#hamburger-menu__toggle:checked ~ .hamburger-menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+}
+
+.menu__item {
+  position: relative;
+  padding: 0 13px;
+  font: 500 16px/19px MuseoSansCyrl, helvetica;
+  color: #f8eee4;
+  text-decoration: none;
+  transition: opacity .5s;
+}
+
+.menu__item:last-child {
+  margin-right: -12px;
+}
+
+.menu__item::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  left: 0;
+  opacity: 0;
+  transition: opacity.5s;
+  background: #0056ec;
+}
+
+.menu__item:hover {
+  opacity: 0.5;
+}
+
+.menu__item:hover::after, .menu__item_active:hover {
+  opacity: 1;
+}
+
+.main {
+  padding: 92px 0 0 0;
+  background: top left no-repeat url(img/bali.svg);
+}
+
+.main__imgaes {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  height: 422px;
+  right: 0px;
+  top: 218px;
+}
+
+.main__imgaes img {
+  margin-left: 24px;
+}
+
+.main__imgaes-img1 {
+  width: 224px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.main__imgaes-img2 {
+  width: 202px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.main__imgaes-img3 {
+  object-fit: cover;
+  width: 40px;
+  height: 270px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.main__title {
+  width: 332px;
+  margin: 15px 30% -5px 60px;
+  font: 700 70px/93px ptserif, arial, helvetica, sans-serif;
+  color: #f8eee4;
+}
+
+.main__subtitle {
+  width: 400px;
+  padding: 0 0 8px 16px;
+  font: 16px/19px MuseoSansCyrl, arial, helvetica, sans-serif;
+  color: #f8eee4;
+}
+
+.main__button {
+  display: inline-block;
+  width: 170px;
+  margin-left: 16px;
+  text-align: center;
+  font: 16px/20px MuseoSansCyrl, arial, helvetica, sans-serif;
+  color: #fff;
+  background: #d4bea3;
+  padding: 12px 18px;
+  border-radius: 48px;
+  transition: opacity .5s;
+  text-decoration: none;
+}
+
+.main__button:hover {
+  opacity: .5;
+}
+
+@media screen and (max-device-width: 980px) {
+
+  .position {
+    width: 90%;
+    margin: auto;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 41px 0 0 7%;
+    margin-bottom: 110px;
+  }
+
+  .logo {
+    width: 104px;
+    height: 39px;
+    background: top left no-repeat url(img/logo.svg);
+  }
+
+
+  .main {
+    padding: 77px 0 0 0;
+    background: top left no-repeat url(img/bali_small.svg);
+    width: 100%%;
+  }
+
+  .main__imgaes {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .main__title {
+    width: 90%;
+    margin: 15px 0 30px 60px;
+    font: 700 60px/93px ptserif, arial, helvetica, sans-serif;
+    color: #f8eee4;
+  }
+
+  .main__subtitle {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    padding: 0 0 18px 16px;
+    font: 18px/21px MuseoSansCyrl, arial, helvetica, sans-serif;
+    color: #f8eee4;
+  }
+
+  .main__button {
+    margin: auto;
+    display: block;
+    width: 170px;
+    text-align: center;
+    font: 16px/20px MuseoSansCyrl, arial, helvetica, sans-serif;
+    color: #fff;
+    background: #d4bea3;
+    padding: 12px 18px;
+    border-radius: 48px;
+    transition: opacity .5s;
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-device-width: 1225px) {
+  .position {
+    width: 79%;
+  }
+
+  .main {
+    padding: 92px 0 0 0;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    margin-right: -5.4%;
+    margin-top: -5px;
+  }
+
+  .main__imgaes {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height: 422px;
+    right: -8%;
+    top: 218px;
+  }
+
+  .main__imgaes-img3 {
+    object-fit: cover;
+    width: 260px;
+    height: 270px;
+    border-radius: 8px 0px 0px 8px;
+  }
+}
+
+@media screen and (min-device-width: 1640px) {
+  .position {
+    width: 79%;
+  }
+
+  .header {
+    padding: 90px 0;
+    margin-bottom: 116px;
+  }
+
+  .logo {
+    width: 146px;
+    height: 54px;
+    background: top right no-repeat url(img/logo.svg);
+    background-size: cover;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    margin-right: -5.4%;
+    margin-top: -5px;
+  }
+
+  .menu__item {
+    position: relative;
+    padding: 0 19px;
+    font: 500 22px/26px MuseoSansCyrl, helvetica;
+    color: #F8EEE4;
+    text-decoration: none;
+    transition: opacity .5s;
+  }
+
+  .main {
+    padding: 190px 0 0 0;
+    background: top left no-repeat url(img/bali_big.svg);
+  }
+
+  .main__imgaes {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height: 422px;
+    right: 0%;
+    top: 390px;
+  }
+
+  .main__imgaes img {
+    margin-left: 33px;
+  }
+
+  .main__imgaes-img1 {
+    width: 317px;
+    border-radius: 8px 8px 8px 8px;
+  }
+
+  .main__imgaes-img2 {
+    width: 284px;
+    border-radius: 8px 8px 8px 8px;
+  }
+
+  .main__imgaes-img3 {
+    object-fit: cover;
+    width: 210px;
+    height: 379px;
+    border-radius: 8px 0px 0px 8px;
+  }
+
+
+  .main__title {
+    margin: 15px 30% 60px 85px;
+    font: 700 98px/39px ptserif;
+  }
+
+  .main__subtitle {
+    width: 35%;
+    margin-bottom: 26px;
+    font: 22px/26px MuseoSansCyrl, arial, helvetica, sans-serif;
+  }
+
+  .main__button {
+    display: inline-block;
+    width: 260px;
+    margin-left: 19px;
+    text-align: center;
+    font: 21px/26px MuseoSansCyrl, arial, helvetica, sans-serif;
+    color: #fff;
+    background: #d4bea3;
+    padding: 19px 17px;
+    border-radius: 48px;
+    transition: opacity .5s;
+    text-decoration: none;
+  }
+}
